@@ -51,6 +51,10 @@ public class DigitalVideoDisc {
     public int getLength() {
         return length;
     }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
 }
 
 
