@@ -41,6 +41,36 @@ public class Cart {
         } 
         return cost;
     }
+    
+    public boolean isMatch(String name) {
+        for (int i = 0; i < qtyOrdered; i++) {
+            if (itemsOrdered[i].getTitle() == name) return true;
+        }
+        return false;
+    }
+    public void search(String name) {
+        if(isMatch(name) == true) {
+            System.out.println("Item is already in cart!");
+        } else {
+            System.out.println("Not found");
+        }
+    }
+    public void printOrderItems() {
+        for(int i = 0; i < qtyOrdered; i++) {
+            System.out.print((i + 1) + ". ");
+            System.out.print(itemsOrdered[i].getTitle());
+            if (itemsOrdered[i].getCategory() != null) {
+                System.out.print(" - " + itemsOrdered[i].getCategory());
+            } if (itemsOrdered[i].getDirector() != null) {
+                System.out.print(" - " + itemsOrdered[i].getDirector());
+            } if (itemsOrdered[i].getLength() != 0) {
+                System.out.print(" - " + itemsOrdered[i].getLength());
+            }
+            System.out.println(": " + itemsOrdered[i].getCost());
+        }
+        float totalPrice = totalCost();
+        System.out.println("Total cost: " + totalPrice);
+    }
 }
 
 
