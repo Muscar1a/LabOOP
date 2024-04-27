@@ -1,4 +1,7 @@
+package hust.soict.aims.store;
 import java.util.Arrays;
+
+import hust.soict.aims.disc.DigitalVideoDisc;
 
 public class Store {
     public static final int MAX_NUMBERS_STORE = 1000;

@@ -1,4 +1,5 @@
-
+package hust.soict.test.disc;
+import hust.soict.aims.disc.DigitalVideoDisc;
 
 public class TestPassingParameter {
     
