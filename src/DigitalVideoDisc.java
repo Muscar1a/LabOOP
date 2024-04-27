@@ -1,9 +1,10 @@
 public class DigitalVideoDisc {
-    private String title;
-    private String category;
-    private String director;
-    private int length;
-    private float cost;
+
+    private String title = null;
+    private String category = null;
+    private String director = null;
+    private int length = 0;
+    private float cost = 0;
     private static int nbDigitalVideoDiscs = 0; 
     private int id;
 
