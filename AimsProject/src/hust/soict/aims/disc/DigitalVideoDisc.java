@@ -14,6 +14,12 @@ public class DigitalVideoDisc extends Disc implements Playable {
         this.title = title;
     }
 
+    public DigitalVideoDisc(String title, float cost) {
+        super();
+        this.title = title;
+        this.cost = cost;
+    }
+
     public DigitalVideoDisc(String title, String category, float cost) {
         super();
         this.category = category;

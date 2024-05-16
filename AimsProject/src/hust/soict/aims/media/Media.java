@@ -1,4 +1,6 @@
 package hust.soict.aims.media;
+import java.util.Comparator;
+
 
 public abstract class Media {
     protected int id;
@@ -6,6 +8,10 @@ public abstract class Media {
     protected String category;
     protected float cost;
 
+    public static final Comparator<Media> COMPARE_BY_TITLE_COST 
+                        = new MediaComparatorByTitleCost();
+    public static final Comparator<Media> COMPARE_BY_COST_TITLE 
+                        = new MediaComparatorByCostTitle();
     @Override
     public boolean equals(Object obj) {
         if (obj instanceof Media) {

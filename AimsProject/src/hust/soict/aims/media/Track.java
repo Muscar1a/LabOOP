@@ -4,6 +4,15 @@ public class Track implements Playable {
     private String title;
     private int length;
 
+    @Override 
+    public boolean equals(Object obj) {
+        if(obj instanceof Track) {
+            Track track = (Track) obj;
+            return this.title.equals(track.title) && this.length == track.length;
+        }
+        return false;
+    }
+
     public Track() {
         this.title = "";
         this.length = 0;

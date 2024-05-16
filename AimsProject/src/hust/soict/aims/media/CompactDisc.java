@@ -10,9 +10,19 @@ public class CompactDisc extends Media implements Playable {
         super();
     }
 
-    CompactDisc(int id, String title, String category, float cost) {
+    public CompactDisc(String title) {
         super();
-        this.setId(id);
+        this.setTitle(title);
+    }
+
+    public CompactDisc(String title, float cost) {
+        super();
+        this.setTitle(title);
+        this.cost = cost;
+    }
+    
+    public CompactDisc(String title, String category, float cost) {
+        super();
         this.setTitle(title);
         this.setCategory(category);
         this.setCost(cost);
@@ -25,6 +35,7 @@ public class CompactDisc extends Media implements Playable {
     public void setArtist(String artist) {
         this.artist = artist;
     }
+
 
     public void addTrack(Track track) {
         for (int i = 0; i < tracks.size(); i++) {

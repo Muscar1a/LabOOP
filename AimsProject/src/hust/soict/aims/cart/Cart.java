@@ -9,6 +9,10 @@ public class Cart {
     public static final int MAX_NUMBERS_ORDERED = 20;
     private ArrayList<Media> itemsOrdered = new ArrayList<Media>();
 
+    public ArrayList<Media> getItemsOrdered() {
+        return itemsOrdered;
+    }
+
     public void addMedia(Media media) {
         if (itemsOrdered.size() < MAX_NUMBERS_ORDERED) {
             itemsOrdered.add(media);
@@ -45,7 +49,7 @@ public class Cart {
         return false;
     }
 
-    public void search(String name) {
+    public void searchTitle(String name) {
         if (isMatch(name) == true) {
             System.out.println("Item is already in cart!");
         } else {
@@ -53,4 +57,17 @@ public class Cart {
         }
     }
 
+    public void print() {
+        System.out.println("Items in cart: "); 
+        System.out.println("Ordered Items:");
+        if (itemsOrdered.size() == 0) {
+            System.out.println("Cart is empty");
+            return;
+        }
+        for (Media media:itemsOrdered) {
+            System.out.println(media.getTitle());
+        }
+        System.out.println("Total cost: " + this.totalCost());
+        System.out.println("-------------------------------");
+    }
 }

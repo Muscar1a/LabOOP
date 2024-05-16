@@ -8,7 +8,21 @@ public class Book extends Media {
     public Book() {
 
     }
-
+    public Book(String title) {
+        this.title = title;
+    }
+    
+    public Book(String title, float cost) {
+        this.title = title;
+        this.cost = cost;
+    }
+    
+    public Book(String title, String category, float cost, ArrayList<String> authors) {
+        this.title = title;
+        this.category = category;
+        this.cost = cost;
+        this.authors = authors;
+    }
     public int getId() {
         return id;
     }
