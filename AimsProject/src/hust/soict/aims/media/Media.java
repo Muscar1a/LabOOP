@@ -1,10 +1,10 @@
 package hust.soict.aims.media;
 
 public abstract class Media {
-    private int id;
-    private String title;
-    private String category;
-    private float cost;
+    protected int id;
+    protected String title;
+    protected String category;
+    protected float cost;
 
     public int getId() {
         return id;

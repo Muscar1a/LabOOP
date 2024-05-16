@@ -1,23 +1,24 @@
 package hust.soict.aims.disc;
-public class DigitalVideoDisc {
 
-    private String title = null;
+import hust.soict.aims.media.Disc;
+import hust.soict.aims.media.Media;
+
+public class DigitalVideoDisc extends Disc {
     private String category = null;
     private String director = null;
     private int length = 0;
-    private float cost = 0;
-    private static int nbDigitalVideoDiscs = 0; 
-    private int id;
+    private static int nbDigitalVideoDiscs = 0;
 
     public DigitalVideoDisc(String title) {
+        super();
         this.title = title;
     }
-    
+
     public DigitalVideoDisc(String title, String category, float cost) {
         super();
         this.category = category;
         this.title = title;
-        this.cost = cost; 
+        this.cost = cost;
         nbDigitalVideoDiscs += 1;
         this.id = nbDigitalVideoDiscs;
     }
@@ -41,7 +42,7 @@ public class DigitalVideoDisc {
         nbDigitalVideoDiscs += 1;
         this.id = nbDigitalVideoDiscs;
     }
-    
+
     public String getTitle() {
         return title;
     }
@@ -66,5 +67,3 @@ public class DigitalVideoDisc {
         this.title = title;
     }
 }
-
-
