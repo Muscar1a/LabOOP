@@ -1,7 +1,6 @@
 package hust.soict.aims.disc;
 
 import hust.soict.aims.media.Disc;
-import hust.soict.aims.media.Media;
 import hust.soict.aims.media.Playable;
 
 public class DigitalVideoDisc extends Disc implements Playable {

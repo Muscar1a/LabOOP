@@ -6,6 +6,15 @@ public abstract class Media {
     protected String category;
     protected float cost;
 
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof Media) {
+            Media media = (Media) obj;
+            return this.id == media.id;
+        }
+        return false;
+    }
+
     public int getId() {
         return id;
     }

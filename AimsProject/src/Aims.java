@@ -15,11 +15,7 @@ public class Aims {
         DigitalVideoDisc dvd3 = new DigitalVideoDisc("Aladin", "Animation", 18.99f);
 
         DigitalVideoDisc[] dvdList = new DigitalVideoDisc[] { dvd1, dvd2, dvd3 };
-        anOrder.addDigitalVideoDisc(dvdList);
-        // anOrder.addDigitalVideoDisc(dvd3);
 
-        // test print
-        anOrder.printOrderItems();
         // test searching
         anOrder.search("The Lion King");
         anOrder.search("Titanic");

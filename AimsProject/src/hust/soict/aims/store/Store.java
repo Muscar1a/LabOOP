@@ -1,40 +1,31 @@
 package hust.soict.aims.store;
-import java.util.Arrays;
 
-import hust.soict.aims.disc.DigitalVideoDisc;
+import java.util.ArrayList;
+
+import hust.soict.aims.media.Media;
 
 public class Store {
     public static final int MAX_NUMBERS_STORE = 1000;
-    DigitalVideoDisc[] itemsInStore = new DigitalVideoDisc[MAX_NUMBERS_STORE];
-    DigitalVideoDisc[] tempInStore = new DigitalVideoDisc[MAX_NUMBERS_STORE];
+    public ArrayList<Media> itemsInStore = new ArrayList<Media>();
 
-    private int counting = 0;
-
-    public void addDVD(DigitalVideoDisc disc) {
-        if (counting < MAX_NUMBERS_STORE) {
-            itemsInStore[counting] = disc;
-            counting++;
+    public void addMedia(Media media) {
+        if (itemsInStore.size() < MAX_NUMBERS_STORE) {
+            itemsInStore.add(media);
             System.out.println("The disc has been added.");
         } else {
             System.out.println("No more space in store.");
         }
     }
 
-    public void removeDVD(DigitalVideoDisc disc) {
-        int cnt = 0;
-        for (int i = 0; i < counting; i++) {
-            if (itemsInStore[i].getTitle() != disc.getTitle()) {
-                tempInStore[cnt] = itemsInStore[i];
-                cnt++;
+    public void removeMedia(Media media) {
+        for (int i = 0; i < itemsInStore.size(); i++) {
+            if (itemsInStore.get(i).getTitle().equals(media.getTitle())) {
+                itemsInStore.remove(i);
+                System.out.println("The disc" + media.getTitle() + "has been removed.");
+                return;
             }
         }
-        if (cnt == counting) {
-            System.out.println("The disc " + '"' + disc.getTitle() + '"' + " is not in the cart.");
-        } else {
-            itemsInStore = Arrays.copyOf(tempInStore, cnt);
-            counting = cnt;
-            System.out.println("The disc " + '"' + disc.getTitle() + '"' + " has been removed.");
-        }
+        System.out.println("The disc is not in the store.");
     }
 
 }
