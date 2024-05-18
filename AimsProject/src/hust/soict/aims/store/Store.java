@@ -8,6 +8,9 @@ public class Store {
     public static final int MAX_NUMBERS_STORE = 1000;
     public ArrayList<Media> itemsInStore = new ArrayList<Media>();
 
+    public ArrayList<Media> getItemsInStore() {
+        return itemsInStore;
+    }
     public void addMedia(Media media) {
         if (itemsInStore.size() < MAX_NUMBERS_STORE) {
             itemsInStore.add(media);
