@@ -1,7 +1,20 @@
 {
     "java.project.sourcePaths": ["src"],
     "java.project.outputPath": "bin",
-    "java.project.referencedLibraries": [
-        "lib/**/*.jar"
-    ]
+    "java.project.referencedLibraries": {
+        "include": [
+            "lib/**/*.jar",
+            "d:\\Learn\\Uni\\OOP\\Package\\javafx-sdk-22.0.1\\lib\\javafx.fxml.jar",
+            "d:\\Learn\\Uni\\OOP\\Package\\javafx-sdk-22.0.1\\lib\\javafx.graphics.jar",
+            "d:\\Learn\\Uni\\OOP\\Package\\javafx-sdk-22.0.1\\lib\\javafx.media.jar",
+            "d:\\Learn\\Uni\\OOP\\Package\\javafx-sdk-22.0.1\\lib\\javafx.swing.jar",
+            "d:\\Learn\\Uni\\OOP\\Package\\javafx-sdk-22.0.1\\lib\\javafx.web.jar",
+            "d:\\Learn\\Uni\\OOP\\Package\\javafx-sdk-22.0.1\\lib\\javafx.base.jar",
+            "d:\\Learn\\Uni\\OOP\\Package\\javafx-sdk-22.0.1\\lib\\javafx.controls.jar",
+            "d:\\Learn\\Uni\\OOP\\Package\\javafx-sdk-22.0.1\\lib\\javafx-swt.jar"
+        ],
+        "exclude": [
+            "d:\\Learn\\Uni\\OOP\\Package\\javafx-sdk-22.0.1\\lib\\javafx-swt.jar"
+        ]
+    }
 }

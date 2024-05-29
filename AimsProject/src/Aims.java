@@ -37,7 +37,7 @@ public class Aims {
             udpateStore();
         } else if (choice == 3) {
             cartMenu();
-        } else if (choice == 0) {
+        } else {
             System.out.println("Exit program");
             System.exit(0);
         }
