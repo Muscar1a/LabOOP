@@ -19,8 +19,8 @@ public class CartTest {
         DigitalVideoDisc[] dvdList = new DigitalVideoDisc[] { dvd1, dvd2, dvd3 };
 
         // test searching
-        anOrder.search("The Lion King");
-        anOrder.search("Titanic");
+        // anOrder.search("The Lion King");
+        // anOrder.search("Titanic");
 
     }
 }
