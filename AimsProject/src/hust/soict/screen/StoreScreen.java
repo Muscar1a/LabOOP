@@ -84,5 +84,4 @@ public class StoreScreen extends JFrame {
         setSize(1024, 768);
     }
 
-
 }

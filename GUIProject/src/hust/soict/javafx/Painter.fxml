@@ -13,8 +13,22 @@
       <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
    </padding>
    <left>
-      <VBox fx:id="drawingAreaPane" maxHeight="1.7976931348623157E308" spacing="8.0" BorderPane.alignment="CENTER">
+      <VBox maxHeight="1.7976931348623157E308" spacing="8.0" BorderPane.alignment="CENTER">
          <children>
+            <TitledPane alignment="CENTER" animated="false" collapsible="false" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" prefHeight="94.0" prefWidth="0.0" text="Tools">
+              <content>
+                <AnchorPane maxWidth="1.7976931348623157E308" prefHeight="72.0" prefWidth="64.0" scaleShape="false">
+                     <children>
+                        <RadioButton layoutX="3.0" layoutY="12.0" mnemonicParsing="false" onAction="#chooseBlack" selected="true" text="Pen">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="tools" />
+                           </toggleGroup>
+                        </RadioButton>
+                        <RadioButton layoutX="4.0" layoutY="35.0" mnemonicParsing="false" onAction="#chooseWhite" prefHeight="17.0" prefWidth="56.0" text="Eraser" toggleGroup="$tools" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </TitledPane>
             <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#clearButtonPressed" text="Clear">
                <font>
                   <Font size="13.0" />
@@ -27,6 +41,6 @@
       </VBox>
    </left>
    <center>
-      <Pane onMouseDragged="#drawingAreaMouseDragged" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER" />
+      <Pane fx:id="drawingAreaPane" onMouseDragged="#drawingAreaMouseDragged" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER" />
    </center>
 </BorderPane>

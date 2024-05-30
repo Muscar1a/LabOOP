@@ -8,13 +8,13 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 
 public class PainterController {
-
+    private Color color = Color.BLACK;
     @FXML
     private Pane drawingAreaPane;
 
     @FXML
     void drawingAreaMouseDragged(MouseEvent event) {
-        Circle newCircle = new Circle(event.getX(), event.getY(), 4, Color.BLACK);
+        Circle newCircle = new Circle(event.getX(), event.getY(), 4, color);
         drawingAreaPane.getChildren().add(newCircle);
     }
 
@@ -23,4 +23,13 @@ public class PainterController {
         drawingAreaPane.getChildren().clear();
     }
 
+    @FXML
+    void chooseBlack(ActionEvent event) {
+        color = Color.BLACK;
+    }
+    @FXML
+    void chooseWhite(ActionEvent event) {
+        color = Color.WHITE;
+    }
+    
 }
