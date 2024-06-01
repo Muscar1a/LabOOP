@@ -1,6 +1,7 @@
 package hust.soict.screen;
 
 import hust.soict.aims.cart.Cart;
+import hust.soict.aims.exception.PlayerException;
 import hust.soict.aims.media.Media;
 import hust.soict.aims.media.Playable;
 import javafx.beans.binding.Bindings;
@@ -9,13 +10,7 @@ import javafx.beans.value.ObservableValue;
 import javafx.collections.transformation.FilteredList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
-import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.util.function.Predicate;
@@ -128,5 +123,32 @@ public class CartScreenController {
     public void btnRemovePressed(ActionEvent event) {
         Media media = tblMedia.getSelectionModel().getSelectedItem();
         cart.removeMedia(media);
+    }
+
+    @FXML
+    void btnPlayPressed(ActionEvent event) {
+        Media media = tblMedia.getSelectionModel().getSelectedItem();
+        Alert alert;
+        try {
+            alert = new Alert(Alert.AlertType.NONE, media.playGUI());
+            alert.setTitle("Playing");
+            alert.setHeaderText(null);
+            alert.getDialogPane().getButtonTypes().add(ButtonType.OK);
+            alert.showAndWait();
+        } catch (PlayerException e) {
+            alert = new Alert(Alert.AlertType.ERROR, e.getMessage());
+            alert.setTitle("ERROR");
+            alert.setHeaderText(null);
+            alert.showAndWait();
+        }
+
+    }
+
+    @FXML
+    void placeOrderPressed(ActionEvent event) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION, cart.placeOrder());
+        alert.setTitle("Order created");
+        alert.setHeaderText(null);
+        alert.showAndWait();
     }
 }

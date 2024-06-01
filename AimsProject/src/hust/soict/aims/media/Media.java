@@ -1,6 +1,6 @@
 package hust.soict.aims.media;
 import java.util.Comparator;
-
+import hust.soict.aims.exception.PlayerException;
 
 public abstract class Media {
     protected int id;
@@ -79,6 +79,9 @@ public abstract class Media {
         this.cost = cost;
     }
 
+    public String playGUI() throws PlayerException {
+        return "Playing media";
+    }
 
     public void play() {
         System.out.println("Playing media");
