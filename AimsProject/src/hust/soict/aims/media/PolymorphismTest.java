@@ -2,14 +2,12 @@ package hust.soict.aims.media;
 
 import java.util.ArrayList;
 
-import hust.soict.aims.disc.DigitalVideoDisc;
-
-public class PolymorphismTestt {
+public class PolymorphismTest {
     private static ArrayList<Media> meida = new ArrayList<Media>();
     public static void main(String[] args) {
         Book book = new Book("Introduction to Python");
         CompactDisc cd = new CompactDisc("Hello World");
-        DigitalVideoDisc dvd = new DigitalVideoDisc("The Lion King");
+        CompactDisc.DigitalVideoDisc dvd = new CompactDisc.DigitalVideoDisc("The Lion King");
 
         meida.add(book);
         meida.add(dvd);

@@ -5,24 +5,19 @@ import java.util.ArrayList;
 public class Book extends Media {
     private ArrayList<String> authors = new ArrayList<String>();
 
-    public Book() {
-
-    }
     public Book(String title) {
-        this.title = title;
+        super(title);
     }
     
     public Book(String title, float cost) {
-        this.title = title;
-        this.cost = cost;
+         super(title, cost);
     }
-    
-    public Book(String title, String category, float cost, ArrayList<String> authors) {
-        this.title = title;
-        this.category = category;
-        this.cost = cost;
-        this.authors = authors;
+
+    public Book(String title, String category, float cost) {
+        super(title, category, cost);
     }
+
+
     public int getId() {
         return id;
     }

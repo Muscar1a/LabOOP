@@ -1,15 +1,15 @@
 package hust.soict.test.disc;
-import hust.soict.aims.disc.DigitalVideoDisc;
+import hust.soict.aims.media.CompactDisc;
 
 public class TestPassingParameter {
     
-    public static void changeTitle(DigitalVideoDisc dvd, String title) {
+    public static void changeTitle(CompactDisc.DigitalVideoDisc dvd, String title) {
         String oldTitle = dvd.getTitle();
         dvd.setTitle(title);
-        dvd = new DigitalVideoDisc(oldTitle);
+        dvd = new CompactDisc.DigitalVideoDisc(oldTitle);
     }
 
-    public static void swap(DigitalVideoDisc dvd1, DigitalVideoDisc dvd2) {
+    public static void swap(CompactDisc.DigitalVideoDisc dvd1, CompactDisc.DigitalVideoDisc dvd2) {
         String temp = dvd1.getTitle();
         dvd1.setTitle(dvd2.getTitle());
         dvd2.setTitle(temp);
@@ -22,8 +22,8 @@ public class TestPassingParameter {
     }*/
 
     public static void main(String[] args) {
-        DigitalVideoDisc jungleDVD = new DigitalVideoDisc("Jungle");
-        DigitalVideoDisc cinderallaDVD = new DigitalVideoDisc("Cinderalla");
+        CompactDisc.DigitalVideoDisc jungleDVD = new CompactDisc.DigitalVideoDisc("Jungle");
+        CompactDisc.DigitalVideoDisc cinderallaDVD = new CompactDisc.DigitalVideoDisc("Cinderalla");
         
         swap(jungleDVD, cinderallaDVD);
         System.out.println("Junlge dvd title: " + jungleDVD.getTitle());

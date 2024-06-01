@@ -1,15 +1,33 @@
 package hust.soict.screen;
 
+import hust.soict.aims.media.Book;
+import hust.soict.aims.media.DigitalVideoDisc;
 import hust.soict.aims.media.Media;
 import hust.soict.aims.store.Store;
 
-import javax.swing.*;
-import java.awt.*;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Container;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
+import java.awt.Font;
+import java.awt.GridLayout;
 import java.util.ArrayList;
+import java.util.List;
+
+import javax.swing.Box;
+import javax.swing.BoxLayout;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JPanel;
+
 
 public class StoreScreen extends JFrame {
     private Store store;
-
     JPanel createNorth() {
         JPanel north = new JPanel();
         north.setLayout(new BoxLayout(north, BoxLayout.Y_AXIS));
@@ -19,12 +37,31 @@ public class StoreScreen extends JFrame {
     }
 
     JMenuBar createMenuBar() {
-        JMenu menu = new JMenu("Option");
+        JMenu menu = new JMenu("Options");
 
         JMenu smUpdateStore = new JMenu("Update Store");
-        smUpdateStore.add(new JMenuItem("Add Book"));
-        smUpdateStore.add(new JMenuItem("Add CD"));
-        smUpdateStore.add(new JMenuItem("Add DVD"));
+
+        JMenuItem addBookItem = new JMenuItem("Add Book");
+        addBookItem.addActionListener(e -> {
+            AddBookToStoreScreen addBookScreen = new AddBookToStoreScreen(store);
+            addBookScreen.showScreen();
+        });
+
+        JMenuItem addCDItem = new JMenuItem("Add CD");
+        addCDItem.addActionListener(e -> {
+            AddCompactDiscToStoreScreen addCDScreen = new AddCompactDiscToStoreScreen(store);
+            addCDScreen.showScreen();
+        });
+
+        JMenuItem addDVDItem = new JMenuItem("Add DVD");
+        addDVDItem.addActionListener(e -> {
+            AddDigitalVideoDiscToStoreScreen addDVDsScreen = new AddDigitalVideoDiscToStoreScreen(store);
+            addDVDsScreen.showScreen();
+        });
+
+        smUpdateStore.add(addBookItem);
+        smUpdateStore.add(addCDItem);
+        smUpdateStore.add(addDVDItem);
 
         menu.add(smUpdateStore);
         menu.add(new JMenuItem("View store"));
@@ -62,9 +99,10 @@ public class StoreScreen extends JFrame {
         JPanel center = new JPanel();
         center.setLayout(new GridLayout(3, 3, 2, 2));
 
-        ArrayList<Media> mediaInStore = store.getItemsInStore();
-        for (int i = 0; i < 9; i++) {
-            MediaStore cell = new MediaStore(mediaInStore.get(i));
+        List<Media> mediaInStore = store.getItemsInStore();
+        int numItems = Math.min(9, mediaInStore.size()); // Get the minimum of 9 and the size of mediaInStore
+        for (int i = 0; i < numItems; i++) {
+            MediaStore cell = new MediaStore(mediaInStore.get(i), store);
             center.add(cell);
         }
 
@@ -84,4 +122,18 @@ public class StoreScreen extends JFrame {
         setSize(1024, 768);
     }
 
+    public static void main(String[] args) {
+        Store store = new Store();
+
+        DigitalVideoDisc dvd1 = new DigitalVideoDisc("Movie 1", "Category 1", "Director 1", 9.99f);
+        DigitalVideoDisc dvd2 = new DigitalVideoDisc("Movie 2", 15.0f);
+
+        Book book = new Book("Book 1", 12.99f);
+
+        store.addMedia(dvd1);
+        store.addMedia(dvd2);
+        store.addMedia(book);
+
+        new StoreScreen(store);
+    }
 }

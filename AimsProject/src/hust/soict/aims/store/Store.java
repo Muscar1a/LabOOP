@@ -11,6 +11,7 @@ public class Store {
     public ArrayList<Media> getItemsInStore() {
         return itemsInStore;
     }
+
     public void addMedia(Media media) {
         if (itemsInStore.size() < MAX_NUMBERS_STORE) {
             itemsInStore.add(media);
@@ -30,5 +31,24 @@ public class Store {
         }
         System.out.println("The disc is not in the store.");
     }
+    public Media search(String title) {
+        for (Media media : itemsInStore) {
+            if (media.getTitle().equals(title)) {
+                return media;
+            }
+        }
+        return null;
+    }
 
+    public void print() {
+        if (itemsInStore.isEmpty()) {
+            System.out.println("The store is empty!");
+        } else {
+            System.out.println("********************STORE INVENTORY********************");
+            for (Media media : itemsInStore) {
+                System.out.println(media);
+            }
+            System.out.println("********************************************************");
+        }
+    }
 }
