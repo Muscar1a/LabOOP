@@ -41,6 +41,18 @@ public class MediaStore extends JPanel {
             public void actionPerformed(ActionEvent e) {
                 // Add the media to the cart
                 store.addMedia(media);
+
+                JDialog dialog = new JDialog();
+                dialog.setTitle("Added " + media.getTitle());
+                dialog.setSize(400, 300);
+                dialog.setModal(true);
+                dialog.setLocationRelativeTo(null);
+
+                JPanel dialogContent = new JPanel();
+                dialogContent.add(new JLabel("Added " + media.getTitle()));
+
+                dialog.getContentPane().add(dialogContent);
+                dialog.setVisible(true);
                 System.out.println("Added to cart: " + media.getTitle());
             }
         });

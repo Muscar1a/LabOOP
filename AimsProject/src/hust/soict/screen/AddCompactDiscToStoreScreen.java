@@ -29,7 +29,7 @@ public class AddCompactDiscToStoreScreen extends AddItemToStoreScreen {
     @Override
     protected void initComponents() {
         setTitle("Add Compact Disc");
-        setLayout(new GridLayout(9, 2));
+        setLayout(new GridLayout(9, 8));
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setResizable(false);
 

@@ -25,7 +25,7 @@ public class AddDigitalVideoDiscToStoreScreen extends AddItemToStoreScreen {
     @Override
     protected void initComponents() {
         setTitle("Add DVD");
-        setLayout(new GridLayout(7, 2));
+        setLayout(new GridLayout(7, 8));
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setResizable(false);
 

@@ -27,7 +27,7 @@ public class AddBookToStoreScreen extends AddItemToStoreScreen {
     @Override
     protected void initComponents() {
         setTitle("Add Book");
-        setLayout(new GridLayout(6, 2));
+        setLayout(new GridLayout(6, 8));
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setResizable(false);
 
